@@ -3,8 +3,12 @@ package com.lcwd;
 import java.util.Properties;
 
 import javax.mail.Authenticator;
+import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  * Hello world!
@@ -54,7 +58,33 @@ public class App
 			
 		});
 		
+		session.setDebug(true);
 		
+		// Step 2: compose the message [ Text , Multimedia ]
+		
+		MimeMessage m = new MimeMessage(session);
+		
+		try {
+			
+			// from email
+			m.setFrom(from);
+			
+			// Addding recipient to message
+			m.addRecipient(Message.RecipientType.TO,new InternetAddress(to));
+			
+			// Adding subject to message
+			m.setSubject(subject);
+			
+			//Adding text to message
+			m.setText(message);
+			
+			// Send
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 		
 		
