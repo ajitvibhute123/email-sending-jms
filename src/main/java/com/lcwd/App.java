@@ -53,7 +53,7 @@ public class App
 			@Override
 			protected PasswordAuthentication getPasswordAuthentication() {
 			
-				return new PasswordAuthentication("vibhuteajit752@gmail.com", "9850962723");
+				return new PasswordAuthentication("vibhuteajit752@gmail.com", "*********");
 			}
 			
 		});
@@ -80,7 +80,10 @@ public class App
 			
 			// Send
 			
+			// Step 3 : send the message using Transport class
+			Transport.send(m);
 			
+			System.out.println("Sent Successfully.........");
 			
 		} catch (Exception e) {
 			e.printStackTrace();
